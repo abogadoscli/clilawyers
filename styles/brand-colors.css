@@ -1,0 +1,62 @@
+
+/* C&L Lawyers Brand Colors based on logo */
+:root {
+  /* Primary Colors from Logo */
+  --brand-black: #000000;
+  --brand-red: #961a19;
+  --brand-dark-gray: #1d1d1b;
+  --brand-brown: #281c19;
+  --brand-pink: #ca8c8c;
+  
+  /* Extended Brand Palette */
+  --brand-red-dark: #7a1517;
+  --brand-red-light: #b22328;
+  --brand-red-50: #fef2f2;
+  --brand-red-100: #fee2e2;
+  --brand-red-200: #fecaca;
+  --brand-red-300: #fca5a5;
+  --brand-red-400: #f87171;
+  --brand-red-500: #ef4444;
+  --brand-red-600: #dc2626;
+  --brand-red-700: #b91c1c;
+  --brand-red-800: #991b1b;
+  --brand-red-900: #7f1d1d;
+  
+  /* Gray Scale */
+  --brand-gray-50: #f9fafb;
+  --brand-gray-100: #f3f4f6;
+  --brand-gray-200: #e5e7eb;
+  --brand-gray-300: #d1d5db;
+  --brand-gray-400: #9ca3af;
+  --brand-gray-500: #6b7280;
+  --brand-gray-600: #4b5563;
+  --brand-gray-700: #374151;
+  --brand-gray-800: #1f2937;
+  --brand-gray-900: #111827;
+}
+
+/* Override Tailwind colors for consistency */
+.bg-brand-primary { background-color: var(--brand-red); }
+.bg-brand-secondary { background-color: var(--brand-black); }
+.text-brand-primary { color: var(--brand-red); }
+.text-brand-secondary { color: var(--brand-black); }
+.border-brand-primary { border-color: var(--brand-red); }
+.border-brand-secondary { border-color: var(--brand-black); }
+
+/* Gradient combinations */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);
+}
+
+.bg-brand-gradient-dark {
+  background: linear-gradient(135deg, var(--brand-black) 0%, var(--brand-dark-gray) 100%);
+}
+
+/* Hover states */
+.hover\:bg-brand-red-hover:hover {
+  background-color: var(--brand-red-dark);
+}
+
+.hover\:text-brand-red-hover:hover {
+  color: var(--brand-red-light);
+}
