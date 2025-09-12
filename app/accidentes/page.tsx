@@ -194,7 +194,7 @@ export default function AccidentesPage() {
                 className="glass-effect border-2 border-white/30 text-white hover:bg-white/20 px-12 py-5 text-lg font-semibold shadow-xl rounded-full" 
                 asChild
               >
-                <a href="tel:+34666232223">
+                <a href={language === "zh" ? "tel:622909303" : "tel:+34666232223"}>
                   <Phone className="mr-3 h-6 w-6" />
                   {language === 'es' ? 'Consulta Inmediata' : language === 'en' ? 'Immediate Consultation' : '立即咨询'}
                 </a>
@@ -290,7 +290,7 @@ export default function AccidentesPage() {
                 style={{borderColor: '#961a19', color: '#961a19'}} 
                 asChild
               >
-                <a href="tel:+34666232223">
+                <a href={language === "zh" ? "tel:622909303" : "tel:+34666232223"}>
                   <Phone className="mr-3 h-5 w-5" />
                   +34 666 232 223
                 </a>

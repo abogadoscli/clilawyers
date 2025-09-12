@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
+import { WeChatContact } from '@/components/ui/wechat-contact';
 import { useLanguage } from '@/contexts/language-context';
 import { siteContent } from '@/lib/content';
 
@@ -387,17 +388,12 @@ export default function InmobiliarioPage() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" asChild>
-                <a href="tel:+34666232223">
+                <a href={language === "zh" ? "tel:622909303" : "tel:+34666232223"}>
                   <Phone className="mr-3 h-5 w-5" />
                   {language === 'es' ? 'Llamar Ahora' : language === 'en' ? 'Call Now' : '立即致电'}
                 </a>
               </Button>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" asChild>
-                <a href="https://wa.me/34666232223" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-3 h-5 w-5" />
-                  WhatsApp
-                </a>
-              </Button>
+              <WeChatContact className="px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" />
             </div>
             
             <div className="pt-8">

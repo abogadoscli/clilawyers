@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
 import { ContactForm } from '@/components/forms/contact-form';
+import { WeChatContact } from '@/components/ui/wechat-contact';
 import { useLanguage } from '@/contexts/language-context';
 import { siteContent } from '@/lib/content';
 
@@ -68,10 +69,10 @@ export default function ContactPage() {
               {language === 'es' ? 'Teléfono' : language === 'en' ? 'Phone' : '电话'}
             </h3>
             <a 
-              href="tel:+34666232223" 
+              href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"} 
               className="text-red-600 hover:text-red-700 font-medium"
             >
-              +34 666 232 223
+              {language === 'zh' ? '622909303' : '+34 666 232 223'}
             </a>
           </div>
 
@@ -94,15 +95,23 @@ export default function ContactPage() {
             <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mx-auto mb-4">
               <MessageCircle className="w-8 h-8 text-red-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">WhatsApp</h3>
-            <a 
-              href="https://wa.me/34666232223" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-700 font-medium"
-            >
-              +34 666 232 223
-            </a>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              {language === 'zh' ? '微信' : 'WhatsApp'}
+            </h3>
+            {language === 'zh' ? (
+              <div className="inline-block">
+                <WeChatContact showWhatsAppForNonChinese={false} />
+              </div>
+            ) : (
+              <a 
+                href="https://wa.me/34666232223" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-red-600 hover:text-red-700 font-medium"
+              >
+                +34 666 232 223
+              </a>
+            )}
           </div>
         </div>
       </Section>
@@ -214,10 +223,11 @@ export default function ContactPage() {
             {pageContent.emergency[language]}
           </h3>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <WeChatContact className="px-8 py-4" />
             <Button size="lg" asChild>
-              <a href="https://wa.me/34666232223" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp +34 666 232 223
+              <a href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"}>
+                <Phone className="mr-2 h-5 w-5" />
+                {language === 'zh' ? '622909303' : '+34 666 232 223'}
               </a>
             </Button>
           </div>

@@ -201,19 +201,15 @@ export default function ServicesPage() {
                               {service.description[language]}
                             </p>
                             
-                            {(service as any).features && (service as any).features.length > 0 && (
-                              <ul className="space-y-2">
-                                {(service as any).features.slice(0, 3).map((feature: string, featureIndex: number) => (
-                                  <li key={featureIndex} className={`flex items-center text-xs font-medium ${
-                                    categoryIndex % 2 === 0 ? 'text-green-300' : 'text-green-700'
-                                  }`}>
-                                    <CheckCircle className={`h-4 w-4 mr-2 ${
-                                      categoryIndex % 2 === 0 ? 'text-green-400' : 'text-green-600'
-                                    }`} />
-                                    {feature}
-                                  </li>
-                                ))}
-                              </ul>
+                            {(service as any).features && (
+                              <div className={`text-xs font-medium ${
+                                categoryIndex % 2 === 0 ? 'text-green-300' : 'text-green-700'
+                              } flex items-start`}>
+                                <CheckCircle className={`h-4 w-4 mr-2 mt-0.5 flex-shrink-0 ${
+                                  categoryIndex % 2 === 0 ? 'text-green-400' : 'text-green-600'
+                                }`} />
+                                <span>{(service as any).features[language]}</span>
+                              </div>
                             )}
                           </div>
                         </div>
@@ -266,12 +262,31 @@ export default function ServicesPage() {
                   {language === 'es' ? 'Enviar Email' : language === 'en' ? 'Send Email' : '发送邮件'}
                 </a>
               </Button>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" asChild>
-                <a href="https://wa.me/34666232223" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-3 h-5 w-5" />
-                  WhatsApp
-                </a>
-              </Button>
+              {language === 'zh' ? (
+                <div className="bg-white p-4 rounded-lg shadow-xl">
+                  <div className="text-center mb-2">
+                    <p className="text-sm font-medium text-gray-700">微信联系</p>
+                  </div>
+                  <Image
+                    src="/wechat-qr.jpg"
+                    alt="WeChat QR Code"
+                    width={120}
+                    height={120}
+                    className="mx-auto rounded-lg"
+                  />
+                  <div className="text-center mt-2">
+                    <p className="text-xs text-gray-600">扫码添加微信</p>
+                    <p className="text-sm font-medium text-gray-800">622909303</p>
+                  </div>
+                </div>
+              ) : (
+                <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" asChild>
+                  <a href="https://wa.me/34666232223" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-3 h-5 w-5" />
+                    WhatsApp
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
+import { WeChatContact } from '@/components/ui/wechat-contact';
 import { useLanguage } from '@/contexts/language-context';
 import { siteContent } from '@/lib/content';
 
@@ -402,12 +403,7 @@ export default function PenalPage() {
                   {language === 'es' ? 'Consulta Normal' : language === 'en' ? 'Regular Consultation' : '常规咨询'}
                 </Link>
               </Button>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" asChild>
-                <a href="https://wa.me/34666232223" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-3 h-5 w-5" />
-                  WhatsApp
-                </a>
-              </Button>
+              <WeChatContact className="px-8 py-4 text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300" />
             </div>
             
             <div className="pt-8">

@@ -1,5 +1,8 @@
 
 import { NextResponse } from 'next/server';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export const dynamic = 'force-dynamic';
 
@@ -26,29 +29,26 @@ export async function POST(request: Request) {
       );
     }
 
-    // Log contact form submission (for now, in production you'd save to DB or send email)
-    console.log('Contact form submission:', {
-      name: name.trim(),
-      email: email.trim(),
-      phone: phone?.trim() || null,
-      subject: subject.trim(),
-      message: message.trim(),
-      service_type: service_type || null,
-      preferred_language: preferred_language || 'es',
-      preferred_office: preferred_office || null,
-      timestamp: new Date().toISOString()
+    // Create contact form entry in database
+    const contactForm = await prisma.contactForm.create({
+      data: {
+        name: name.trim(),
+        email: email.trim(),
+        phone: phone?.trim() || null,
+        subject: subject.trim(),
+        message: message.trim(),
+        service_type: service_type || null,
+        preferred_language: preferred_language || 'es',
+        preferred_office: preferred_office || null,
+        status: 'new'
+      }
     });
-
-    // In production, you would:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Send confirmation email to user
 
     return NextResponse.json(
       { 
         success: true, 
         message: 'Contact form submitted successfully',
-        id: `temp_${Date.now()}`
+        id: contactForm.id
       },
       { status: 201 }
     );
@@ -63,11 +63,21 @@ export async function POST(request: Request) {
 }
 
 export async function GET(request: Request) {
-  return NextResponse.json(
-    { 
-      message: 'Contact API is working',
-      timestamp: new Date().toISOString()
-    },
-    { status: 200 }
-  );
+  try {
+    // This would be for admin purposes - get all contact forms
+    const contactForms = await prisma.contactForm.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      },
+      take: 50 // Limit to last 50 entries
+    });
+
+    return NextResponse.json(contactForms);
+  } catch (error) {
+    console.error('Get contact forms error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
 }

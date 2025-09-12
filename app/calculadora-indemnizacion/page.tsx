@@ -395,7 +395,7 @@ export default function CompensationCalculatorPage() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="tel:+34666232223">
+              <a href={language === "zh" ? "tel:622909303" : "tel:+34666232223"}>
                 <Phone className="mr-2 h-5 w-5" />
                 +34 666 232 223
               </a>

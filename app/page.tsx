@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { AnimatedCounter } from '@/components/ui/animated-counter';
+import { WeChatContact } from '@/components/ui/wechat-contact';
 import { useLanguage } from '@/contexts/language-context';
 import { siteContent } from '@/lib/content';
 import { TestimonialsSection } from '@/components/sections/testimonials';
@@ -475,7 +476,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="border-2 glass-effect hover-lift px-10 py-5 text-lg rounded-full font-bold" style={{borderColor: '#961a19', color: '#961a19'}} asChild>
-                <a href="tel:+34666232223">
+                <a href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"}>
                   <Phone className="mr-3 h-6 w-6" />
                   {language === 'es' ? 'Consulta Inmediata' : language === 'en' ? 'Immediate Consultation' : '立即咨询'}
                 </a>
@@ -681,7 +682,7 @@ export default function HomePage() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <Button size="lg" className="elegant-button text-white px-12 py-6 text-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-500 rounded-full" asChild>
-                <a href="tel:+34666232223">
+                <a href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"}>
                   <Phone className="mr-4 h-7 w-7" />
                   {language === 'es' ? 'Consulta Inmediata' : language === 'en' ? 'Immediate Consultation' : '立即咨询'}
                 </a>
@@ -692,12 +693,7 @@ export default function HomePage() {
                   {language === 'es' ? 'Email Profesional' : language === 'en' ? 'Professional Email' : '专业邮件'}
                 </a>
               </Button>
-              <Button className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 text-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-500 rounded-full" asChild>
-                <a href="https://wa.me/34666232223" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-4 h-7 w-7" />
-                  WhatsApp
-                </a>
-              </Button>
+              <WeChatContact className="px-12 py-6 text-xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-500 rounded-full" />
             </div>
             
             <div className="pt-12">
