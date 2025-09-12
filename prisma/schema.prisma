@@ -1,0 +1,99 @@
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+    output = "/home/ubuntu/clilawyers_new/app/node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model BlogPost {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  published     Boolean  @default(false)
+  slug          String   @unique
+  category      String
+  
+  // Multilingual content
+  title_es      String
+  title_en      String
+  title_zh      String
+  content_es    String   @db.Text
+  content_en    String   @db.Text
+  content_zh    String   @db.Text
+  excerpt_es    String?
+  excerpt_en    String?
+  excerpt_zh    String?
+  
+  // SEO
+  meta_title_es    String?
+  meta_title_en    String?
+  meta_title_zh    String?
+  meta_desc_es     String?
+  meta_desc_en     String?
+  meta_desc_zh     String?
+  
+  // Image
+  featured_image   String?
+  
+  @@map("blog_posts")
+}
+
+model ContactForm {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  
+  // Contact info
+  name        String
+  email       String
+  phone       String?
+  
+  // Case details
+  subject     String
+  message     String   @db.Text
+  service_type String? // banking, accidents, corporate, etc.
+  preferred_language String @default("es") // es, en, zh
+  
+  // Office preference
+  preferred_office String? // tenerife, shanghai
+  
+  // Status
+  status      String   @default("new") // new, contacted, in_progress, closed
+  
+  // Internal notes
+  internal_notes String? @db.Text
+  
+  @@map("contact_forms")
+}
+
+model LegalConsultation {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Client info
+  client_name   String
+  client_email  String
+  client_phone  String?
+  
+  // Case details
+  case_type     String // accident, banking, corporate, etc.
+  case_description String @db.Text
+  estimated_amount Float?
+  
+  // Status
+  status        String @default("initial") // initial, evaluating, accepted, rejected, closed
+  priority      String @default("normal") // low, normal, high, urgent
+  
+  // Assignment
+  assigned_office String? // tenerife, shanghai
+  assigned_lawyer String?
+  
+  // Internal tracking
+  internal_notes  String? @db.Text
+  
+  @@map("legal_consultations")
+}

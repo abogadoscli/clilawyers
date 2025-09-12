@@ -10,7 +10,7 @@ export interface MultilingualText {
 export interface ServiceItem {
   name: MultilingualText;
   description: MultilingualText;
-  features?: string[];
+  features?: MultilingualText;
   unique?: boolean;
 }
 
@@ -80,7 +80,11 @@ export const siteContent = {
             en: "Compensation claims for traffic accidents, including injuries, death and material damage",
             zh: "交通事故赔偿索赔，包括伤害、死亡和物质损失"
           },
-          features: ["Calculadora online", "Sin costes iniciales", "Éxito garantizado"]
+          features: {
+            es: "Calculadora online • Sin costes iniciales • Éxito garantizado",
+            en: "Online calculator • No initial costs • Guaranteed success",
+            zh: "在线计算器 • 无初始费用 • 保证成功"
+          }
         },
         {
           name: {
@@ -169,7 +173,11 @@ export const siteContent = {
             en: "Money recovery from abusive floor clauses in mortgages",
             zh: "从抵押贷款中滥用的最低利率条款中追回资金"
           },
-          features: ["Sin coste inicial", "Gestión 100% online", "Éxito garantizado"]
+          features: {
+            es: "Sin coste inicial • Gestión 100% online • Éxito garantizado",
+            en: "No initial cost • 100% online management • Guaranteed success",
+            zh: "无初始费用 • 100%在线管理 • 保证成功"
+          }
         },
         {
           name: {
@@ -206,7 +214,11 @@ export const siteContent = {
             en: "Claims for abusive interest on revolving credit cards",
             zh: "循环信用卡滥用利息索赔"
           },
-          features: ["Wizink, IKEA VISA y otras entidades"]
+          features: {
+            es: "Wizink, IKEA VISA y otras entidades",
+            en: "Wizink, IKEA VISA and other entities",
+            zh: "Wizink, IKEA VISA 和其他实体"
+          }
         },
         {
           name: {
@@ -219,7 +231,11 @@ export const siteContent = {
             en: "Recovery of improperly paid mortgage expenses",
             zh: "追回不当支付的抵押费用"
           },
-          features: ["Recuperación de tasación, gestoría, registro"]
+          features: {
+            es: "Recuperación de tasación, gestoría, registro",
+            en: "Recovery of appraisal, management, registration fees",
+            zh: "追回评估费、管理费、注册费"
+          }
         },
         {
           name: {
@@ -260,12 +276,11 @@ export const siteContent = {
             en: "Specialized consulting for import and export with China",
             zh: "与中国进出口专业咨询"
           },
-          features: [
-            "Búsqueda de productos adecuados",
-            "Gestión de fabricación",
-            "Supervisión de transporte hasta almacén del cliente",
-            "Profesionales españoles y chinos especializados"
-          ]
+          features: {
+            es: "Búsqueda de productos adecuados • Gestión de fabricación • Supervisión de transporte hasta almacén del cliente • Profesionales españoles y chinos especializados",
+            en: "Search for suitable products • Manufacturing management • Transport supervision to customer warehouse • Spanish and Chinese specialized professionals",
+            zh: "寻找合适的产品 • 制造管理 • 运输监督到客户仓库 • 西班牙和中国专业人士"
+          }
         },
         {
           name: {
@@ -342,7 +357,11 @@ export const siteContent = {
             en: "Claims for wrongful dismissals and compensation calculation",
             zh: "不当解雇索赔和赔偿计算"
           },
-          features: ["15% de éxito sobre cantidad recuperada", "Gestión empática"]
+          features: {
+            es: "15% de éxito sobre cantidad recuperada • Gestión empática",
+            en: "15% success on amount recovered • Empathetic management",
+            zh: "追回金额的15%成功费 • 富有同情心的管理"
+          }
         },
         {
           name: {
@@ -407,7 +426,11 @@ export const siteContent = {
             en: "Processing of inheritance, wills and intestate succession",
             zh: "继承、遗嘱和无遗嘱继承的处理"
           },
-          features: ["Especialistas reconocidos"]
+          features: {
+            es: "Especialistas reconocidos",
+            en: "Recognized specialists",
+            zh: "公认的专家"
+          }
         },
         {
           name: {

@@ -25,8 +25,6 @@ export function Header() {
     { key: 'blog', href: '/blog' },
   ];
 
-  // Usar rutas directas sin prefijos de idioma
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -85,13 +83,13 @@ export function Header() {
           <div className="flex items-center space-x-6">
             {/* Contact Phone */}
             <a 
-              href="tel:+34666232223"
+              href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"}
               className="hidden lg:flex items-center space-x-3 px-4 py-2 rounded-full glass-effect hover-lift text-sm font-semibold text-gray-800 hover:text-gray-900 transition-all duration-300"
             >
               <div className="p-1.5 rounded-full elegant-gradient">
                 <Phone className="h-4 w-4 text-white" />
               </div>
-              <span>+34 666 232 223</span>
+              <span>{language === 'zh' ? '622909303' : '+34 666 232 223'}</span>
             </a>
 
             {/* Language Selector */}
@@ -144,7 +142,7 @@ export function Header() {
               
               {/* Mobile Contact */}
               <a 
-                href="tel:+34666232223"
+                href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"}
                 className="flex items-center space-x-2 px-3 py-2 text-base font-medium rounded-md transition-colors duration-200"
                 style={{color: '#961a19', backgroundColor: '#fef2f2'}}
                 onMouseEnter={(e) => {
@@ -157,7 +155,7 @@ export function Header() {
                 }}
               >
                 <Phone className="h-4 w-4" />
-                <span>+34 666 232 223</span>
+                <span>{language === 'zh' ? '622909303' : '+34 666 232 223'}</span>
               </a>
             </div>
           </div>

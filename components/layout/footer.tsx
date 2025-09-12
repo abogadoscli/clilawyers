@@ -137,10 +137,10 @@ export function Footer() {
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-red-400 flex-shrink-0" />
                   <a 
-                    href="tel:+34666232223"
+                    href={language === 'zh' ? "tel:622909303" : "tel:+34666232223"}
                     className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    +34 666 232 223
+                    {language === 'zh' ? '622909303' : '+34 666 232 223'}
                   </a>
                 </div>
                 
