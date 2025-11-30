@@ -494,14 +494,13 @@ export default function HomePage() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="glass-effect rounded-2xl p-4">
-                  <p className="text-white font-semibold">
-                    {language === 'es' ? 'Consulta Profesional Especializada' : language === 'en' ? 'Specialized Professional Consultation' : '专业专业咨询'}
-                  </p>
-                </div>
-              </div>
+         <div className="absolute bottom-6 left-6 right-6">
+  <div className="glass-effect border-2 border-white/50 text-white rounded-2xl p-6 backdrop-blur-md shadow-xl bg-white/10">
+    <p className="text-white font-medium text-lg tracking-wide text-center">
+      {language === 'es' ? 'Consulta Profesional Especializada' : language === 'en' ? 'Specialized Professional Consultation' : '专业专业咨询'}
+    </p>
+  </div>
+</div>
             </div>
           </div>
         </div>
