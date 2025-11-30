@@ -488,7 +488,7 @@ export default function HomePage() {
           <div className="order-1 lg:order-2">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden luxury-shadow hover-lift">
               <Image
-                src="https://cdn.abacus.ai/images/92cb9622-3291-4b90-80d2-223d00f40c04.png"
+                src="https://cdn.abacus.ai/images/dc35540d-dbd0-44d5-9029-ac5a1d8e2495.png"
                 alt="Consulta Legal Profesional"
                 fill
                 className="object-cover"
