@@ -299,23 +299,24 @@ export default function AccidentesPage() {
           </div>
           
           <div className="order-1 lg:order-2">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden luxury-shadow hover-lift">
-              <Image
-                src="https://cdn.abacus.ai/images/92cb9622-3291-4b90-80d2-223d00f40c04.png"
-                alt="Consulta Legal Especializada en Accidentes"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="glass-effect rounded-2xl p-4">
-                  <p className="text-white font-semibold">
-                    {language === 'es' ? 'Especialistas en Accidentes' : language === 'en' ? 'Accident Specialists' : '事故专家'}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden luxury-shadow hover-lift">
+    <Image
+      src="https://cdn.abacus.ai/images/dc35540d-dbd0-44d5-9029-ac5a1d8e2495.png"
+      alt="Equipo C&LI Abogados - Especialistas en Accidentes"
+      fill
+      className="object-cover"
+      priority
+    />
+    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30" />
+    <div className="absolute bottom-6 left-6 right-6">
+      <div className="glass-effect border-2 border-white/50 text-white rounded-2xl p-6 backdrop-blur-md shadow-xl bg-white/10">
+        <p className="text-white font-medium text-lg tracking-wide text-center">
+          {language === 'es' ? 'Abogados Especialistas en Accidentes' : language === 'en' ? 'Accident Specialist Lawyers' : '事故专业律师'}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </Section>
 
