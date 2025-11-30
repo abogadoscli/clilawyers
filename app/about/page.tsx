@@ -238,8 +238,8 @@ export default function AboutPage() {
           <div className="relative">
             <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://cdn.abacus.ai/images/2e18d451-e44c-43e2-9723-3971faa579d5.png"
-                alt="Modern law firm office interior"
+                src="https://cdn.abacus.ai/images/dc35540d-dbd0-44d5-9029-ac5a1d8e2495.png"
+alt="Equipo C&LI Abogados en despacho profesional"
                 fill
                 className="object-cover"
               />
@@ -255,8 +255,8 @@ export default function AboutPage() {
           <div className="relative lg:order-1">
             <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://cdn.abacus.ai/images/e3855c46-6181-4ce8-8ad5-0e059a9c98e6.png"
-                alt="Professional legal team working together"
+                src="https://cdn.abacus.ai/images/bcd14335-f4ba-4b73-a243-d8cb819f601f.png"
+alt="Equipo profesional C&LI Abogados trabajando juntos"
                 fill
                 className="object-cover"
               />
